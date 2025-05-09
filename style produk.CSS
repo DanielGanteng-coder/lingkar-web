@@ -1,188 +1,225 @@
-/* ===== OPTIMIZED PRODUCTS CSS ===== */
-*,:after,:before{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif} 
-
-body{background:#f9f9f9;line-height:1.5;-webkit-font-smoothing:antialiased}
-
-/* ===== NAVBAR ===== */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 5%;
-    background:#9C7A2C;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    will-change:transform;
-    contain:layout;
+/* ===== GLOBAL STYLES ===== */
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
+body {
+    background: #f9f9f9;
+    scroll-behavior: smooth;
 }
 
-.logo img{
-    height:40px;
-    image-rendering:crisp-edges;
-    transform:scale(1.5);
-    transform-origin:left;
-    will-change:transform;
+/* ===== NAVBAR (Optimized) ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #9C7A2C;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    will-change: transform;
+    contain: layout;
 }
 
-.nav-links{
-    display:flex;
-    gap:1.5rem;
-    list-style:none;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:500;
-    transition:opacity 0.2s;
+.logo img {
+    height: 40px;
+    transform: scale(4);
+    transform-origin: left center;
+    margin-right: 20px;
+    image-rendering: crisp-edges;
 }
 
-.nav-links a:hover{opacity:0.8}
-
-.btn-login{
-    background:#fff;
-    color:#9C7A2C!important;
-    padding:0.5rem 1rem;
-    border-radius:5px;
-    will-change:transform;
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
 }
 
-/* ===== PRODUCTS PAGE ===== */
-.hero-products{
-    padding:8rem 5% 2rem;
-    background:linear-gradient(135deg,#f9f9f9 0%,#eadab6 100%);
-    contain:layout;
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-.hero-products h1{
-    font-size:clamp(1.8rem,4vw,2.5rem);
-    color:#2c3e50;
-    text-align:center;
-    margin-bottom:1rem;
+.nav-links a.active {
+    color: #ffffff;
 }
 
-/* ===== SEARCH & FILTER ===== */
-.controls-container{
-    padding:2rem 5%;
-    display:flex;
-    gap:1rem;
-    flex-wrap:wrap;
-    align-items:center;
+.nav-links a:hover {
+    color: #000000;
 }
 
-#search-bar{
-    flex:1;
-    max-width:400px;
-    padding:0.8rem 1.5rem;
-    border:2px solid #9C7A2C;
-    border-radius:30px;
-    font-size:1rem;
-    min-width:250px;
+.btn-login {
+    background: #ffffff;
+    color: #9C7A2C!important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    will-change: transform;
 }
 
-#sort-harga{
-    padding:0.8rem 1rem;
-    border:2px solid #9C7A2C;
-    border-radius:30px;
-    background:white;
-    cursor:pointer;
+/* ===== PRODUCTS PAGE (Optimized) ===== */
+.hero-products {
+    padding: 8rem 5% 2rem;
+    background: linear-gradient(135deg, #f9f9f9 0%, #eadab6 100%);
+    contain: layout;
 }
 
-.filter-kategori{
-    display:flex;
-    gap:1rem;
-    flex-wrap:wrap;
+.hero-products h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.filter-btn{
-    padding:0.6rem 1.5rem;
-    border:2px solid #ddd;
-    background:white;
-    border-radius:30px;
-    cursor:pointer;
-    transition:all 0.2s;
+/* ===== SEARCH & FILTER (Optimized) ===== */
+.controls-container {
+    padding: 2rem 5%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    contain: layout;
 }
 
-.filter-btn.active{
-    background:#9C7A2C;
-    color:white;
-    border-color:#9C7A2C;
+#search-bar {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #9C7A2C;
+    border-radius: 30px;
+    font-size: 1rem;
+    min-width: 250px;
 }
 
-/* ===== PRODUCT GRID ===== */
-.produk-grid{
-    padding:0 5% 4rem;
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-    gap:1.5rem;
-    will-change:transform;
+#sort-harga {
+    padding: 0.8rem 1rem;
+    border: 2px solid #9C7A2C;
+    border-radius: 30px;
+    background: white;
+    cursor: pointer;
 }
 
-.produk-card{
-    background:white;
-    border-radius:15px;
-    padding:1.5rem;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    transition:transform 0.2s,opacity 0.2s;
-    will-change:transform,opacity;
+.filter-kategori {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.produk-card.hidden{
-    opacity:0;
-    transform:scale(0.95);
-    height:0;
-    padding:0;
-    margin:0;
-    overflow:hidden;
+.filter-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.produk-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
-    margin-bottom:1rem;
-    loading:lazy;
-    decoding:async;
+.filter-btn.active {
+    background: #9C7A2C;
+    color: white;
+    border-color: #9C7A2C;
 }
 
-.btn-beli{
-    background:#9C7A2C;
-    color:white;
-    border:0;
-    padding:0.8rem;
-    border-radius:25px;
-    width:100%;
-    cursor:pointer;
-    transition:opacity 0.2s;
+/* ===== PRODUCT GRID (Optimized) ===== */
+.produk-grid {
+    padding: 0 5% 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    contain: layout;
 }
 
-.btn-beli:hover{opacity:0.9}
+.produk-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s linear;
+    will-change: transform, opacity;
+}
 
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
-    nav{padding:1rem}
-    
-    .hero-products{padding-top:6rem}
-    
-    .produk-grid{
-        grid-template-columns:1fr;
-        padding:0 2% 4rem;
+.produk-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.produk-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    image-rendering: optimizeQuality;
+}
+
+.btn-beli {
+    background: #9C7A2C;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-beli:hover {
+    transform: scale(0.98);
+}
+
+/* ===== ANIMATIONS (Optimized) ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (prefers-reduced-motion:reduce){
-    *{
-        animation-duration:0.01ms!important;
-        animation-iteration-count:1!important;
-        transition-duration:0.01ms!important;
+/* ===== RESPONSIVE (Optimized) ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .controls-container {
+        flex-direction: column;
+    }
+    
+    #search-bar {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .produk-card {
+        transition: none;
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
