@@ -1,0 +1,167 @@
+/* ===== RESET CSS ===== */
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #9C7A2C;
+    box-shadow: 0 2px 5px rgba(4, 4, 4, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Jarak antara logo dan teks */
+}
+
+.logo img {
+    height: 40px; /* Tetap pertahankan tinggi original */
+    transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
+    transform-origin: left center; /* Anchor ke kiri */
+    margin-right: 20px; /* Tambah jarak dari menu */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
+.btn-login {
+    background: #ffffff;
+    color: #9C7A2C!important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+
+/* ===== LOGIN SECTION ===== */
+.login-container {
+    padding: 100px 5% 50px;
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f4ec 0%, #ffffff 100%);
+}
+
+.login-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-box h1 {
+    color: #9C7A2C;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #7f8c8d;
+}
+
+.forgot-password {
+    color: #9C7A2C;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-login-submit {
+    background: #9C7A2C;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-login-submit:hover {
+    background: #866923;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #7f8c8d;
+}
+
+.register-link a {
+    color: #9C7A2C;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 1.5rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

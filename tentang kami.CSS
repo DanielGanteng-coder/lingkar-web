@@ -1,0 +1,169 @@
+/* ===== RESET CSS ===== */
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #9C7A2C;
+    box-shadow: 0 2px 5px rgba(4, 4, 4, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Jarak antara logo dan teks */
+}
+
+.logo img {
+    height: 40px; /* Tetap pertahankan tinggi original */
+    transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
+    transform-origin: left center; /* Anchor ke kiri */
+    margin-right: 20px; /* Tambah jarak dari menu */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
+.btn-login {
+    background: #ffffff;
+    color: #9C7A2C!important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* ===== TENTANG KAMI ===== */
+.tentang-container {
+    padding: 100px 5% 50px;
+    margin-top: 80px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f4ec 100%);
+}
+
+.tentang-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tentang-header h1 {
+    font-size: 2.5rem;
+    color: #9C7A2C;
+    margin-bottom: 1rem;
+}
+
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.nilai-grid,
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card,
+.nilai-card,
+.team-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover,
+.nilai-card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #9C7A2C;
+    margin-bottom: 1rem;
+}
+
+.timeline-section {
+    margin: 4rem 0;
+}
+
+.timeline {
+    border-left: 3px solid #9C7A2C;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.year {
+    position: absolute;
+    left: -85px;
+    top: 0;
+    background: #9C7A2C;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.sosmed {
+    margin-top: 1rem;
+}
+
+.sosmed a {
+    color: #9C7A2C;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tentang-header h1 {
+        font-size: 2rem;
+    }
+    
+    .year {
+        left: -70px;
+        padding: 0.3rem 0.8rem;
+    }
+}

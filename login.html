@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LINGKAR</title>
+    <link rel="stylesheet" href="style/login.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="style/foto/Logo LINGKAR.png" alt="LINGKAR">
+            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="products.html">Produk</a></li>
+            <li><a href="penitipan.html">Penitipan</a></li>
+            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="login.html" class="btn-login active">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-container">
+        <div class="login-box">
+            <h1>Masuk ke Akun Anda</h1>
+            <form class="login-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="contoh@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Ingat Saya
+                    </label>
+                    <a href="#lupa-password" class="forgot-password">Lupa Password?</a>
+                </div>
+
+                <button type="submit" class="btn-login-submit">Masuk</button>
+
+                <div class="register-link">
+                    Belum punya akun? <a href="daftar.html">Daftar Sekarang</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

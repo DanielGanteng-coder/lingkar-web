@@ -1,0 +1,164 @@
+/* ===== RESET CSS ===== */
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #9C7A2C;
+    box-shadow: 0 2px 5px rgba(4, 4, 4, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Jarak antara logo dan teks */
+}
+
+.logo img {
+    height: 40px; /* Tetap pertahankan tinggi original */
+    transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
+    transform-origin: left center; /* Anchor ke kiri */
+    margin-right: 20px; /* Tambah jarak dari menu */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
+.btn-login {
+    background: #ffffff;
+    color: #9C7A2C!important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+
+/* ===== PENITIPAN SECTION ===== */
+.penitipan-container {
+    padding: 100px 5% 50px;
+    margin-top: 80px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f4ec 100%);
+}
+
+.penitipan-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.penitipan-header h1 {
+    font-size: 2.5rem;
+    color: #9C7A2C;
+    margin-bottom: 1rem;
+}
+
+.keunggulan-grid,
+.prosedur-steps,
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.keunggulan-card,
+.step-card,
+.faq-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.keunggulan-card:hover {
+    transform: translateY(-5px);
+}
+
+.keunggulan-card i {
+    font-size: 2.5rem;
+    color: #9C7A2C;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #9C7A2C;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.penitipan-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background: #9C7A2C;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .penitipan-header h1 {
+        font-size: 2rem;
+    }
+}

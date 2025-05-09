@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Penitipan - LINGKAR</title>
+    <link rel="stylesheet" href="Style/penitipan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="style/foto/Logo LINGKAR.png" alt="LINGKAR">
+            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="products.html">Produk</a></li>
+            <li><a href="penitipan.html" class="active">Penitipan</a></li>
+            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Penitipan Section -->
+    <section class="penitipan-container">
+        <div class="penitipan-header">
+            <h1>Layanan Penitipan Barang</h1>
+            <p>Solusi Aman dan Tepat untuk Penyimpanan Barang Anda</p>
+        </div>
+
+        <!-- Keunggulan -->
+        <div class="keunggulan-section">
+            <h2>Mengapa Memilih LINGKAR?</h2>
+            <div class="keunggulan-grid">
+                <div class="keunggulan-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Keamanan 24/7</h3>
+                    <p>Banyak tetangga yang suka julid melihat</p>
+                </div>
+                <div class="keunggulan-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Fleksibel</h3>
+                    <p>Durasi penitipan mulai dari 1 hari - 1 tahun</p>
+                </div>
+                <div class="keunggulan-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Mulai dari Rp 50.000/bulan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prosedur -->
+        <div class="prosedur-section">
+            <h2>Cara Menitipkan Barang</h2>
+            <div class="prosedur-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Registrasi Online</h3>
+                    <p>Isi formulir pendaftaran dan pilih paket</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Verifikasi Barang</h3>
+                    <p>Bawa barang ke gudang kami untuk inspeksi</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Penitipan Aman</h3>
+                    <p>Terima bukti penitipan dan track status online</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Penitipan -->
+        <div class="form-section">
+            <h2>Mulai Penitipan</h2>
+            <form class="penitipan-form">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Durasi Penitipan</label>
+                    <select required>
+                        <option value="">Pilih Durasi</option>
+                        <option>1 hari</option>
+                        <option>3 hari</option>
+                        <option>1 Minggu</option>
+                        <option>1 Bulan</option>
+                        <option>3 Bulan</option>
+                        <option>6 Bulan</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Ajukan Penitipan</button>
+            </form>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Pertanyaan Umum</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>📦 Barang apa saja yang boleh dititipkan?</h3>
+                    <p>Kami menerima semua barang dalam kondisi baik. Kecuali bahan berbahaya, organik, dan hewan</p>
+                </div>
+                <div class="faq-card">
+                    <h3>⏱ Bagaimana sistem pengambilan barang?</h3>
+                    <p>Bisa diambil kapan saja selama jam operasional dengan menunjukkan ID dan bukti penitipan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
