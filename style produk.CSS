@@ -127,23 +127,26 @@
         }
 
         /* ===== PRODUCT GRID ===== */
-        .produk-grid {
-            padding: 0 5% 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+      .produk-grid {
+    padding: 0 5% 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    grid-auto-flow: dense;
+    align-items: start;
+}
 
-        .produk-card {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 1;
-            transform: translateY(0);
-            animation: slideIn 0.5s ease-out;
-        }
+       .produk-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.5s ease-out;
+    width: 100%;
+}
 
         .produk-card.hidden {
             opacity: 0;
@@ -222,8 +225,8 @@
        /* Animasi Pencarian */
     .produk-grid {
         grid-auto-flow: dense;
-        transition: all 0.3s ease;
-    }
+      transition: grid-template-rows 0.3s ease;
+}
 
     .produk-card {
         transition: 
@@ -257,14 +260,16 @@
         transform: scale(1);
     }
 
-    .produk-card.hidden {
-        opacity: 0;
-        transform: scale(0.8);
-        position: absolute;
-        height: 0;
-        overflow: hidden;
-        pointer-events: none;
-    }
+   .produk-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+}
 
     @keyframes reposition {
         from { transform: translateY(50px); }
