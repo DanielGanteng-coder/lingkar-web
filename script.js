@@ -1,4 +1,14 @@
+// Toggle mobile menu
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
 
+// Close menu ketika klik diluar
+document.addEventListener('click', function(e) {
+    if(!e.target.closest('.nav') && !e.target.closest('.menu-toggle')) {
+        document.querySelector('.nav-links').classList.remove('active');
+    }
+});
 
 document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
