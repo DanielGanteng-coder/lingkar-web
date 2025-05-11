@@ -86,7 +86,7 @@ nav{
     flex-wrap:wrap;
 }
 
-.btn-jual,.btn-titip{
+.btn-jual,.btn-titip,.btn-jualMakanan{
     padding:1rem 2rem;
     border:0;
     border-radius:25px;
@@ -102,6 +102,12 @@ nav{
 
 .btn-titip{
     background:#fff;
+    color:#9C7A2C;
+    border:1px solid #9C7A2C;
+}
+
+.btn-jualMakanan{
+    background:linear-gradient(to right, #9C7A2C, #5A4A1F);
     color:#9C7A2C;
     border:1px solid #9C7A2C;
 }
