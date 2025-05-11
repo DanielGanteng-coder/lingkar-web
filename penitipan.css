@@ -48,7 +48,7 @@ nav {
     }
 
     .menu-toggle {
-        display: block;
+        display: none;
     }
 
     .logo img {
