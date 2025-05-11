@@ -86,7 +86,7 @@ nav{
     flex-wrap:wrap;
 }
 
-.btn-jual,.btn-titip,.btn-jualMakanan{
+.btn-jual,.btn-titip,.btn-makanan{
     padding:1rem 2rem;
     border:0;
     border-radius:25px;
@@ -106,9 +106,9 @@ nav{
     border:1px solid #9C7A2C;
 }
 
-.btn-jualMakanan {
-    background:#fff;
-    color:#9C7A2C;
+.btn-makanan {
+    background:linear-gradient(to right, #9C7A2C, #5A4A1F);
+    color:#fff;
     border:1px solid #9C7A2C;
 }
 
