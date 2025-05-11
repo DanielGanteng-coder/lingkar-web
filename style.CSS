@@ -107,7 +107,7 @@ nav{
 }
 
 .btn-makanan {
-    background:linear-gradient(to right, #9C7A2C, #5A4A1F);
+    background:linear-gradient(to right, #9C7A2C, #fff);
     color:#fff;
     border:1px solid #9C7A2C;
 }
