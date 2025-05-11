@@ -86,7 +86,16 @@ nav{
     flex-wrap:wrap;
 }
 
-.btn-jual,.btn-titip,.btn-jualMakanan{
+.btn-jual,.btn-titip{
+    padding:1rem 2rem;
+    border:0;
+    border-radius:25px;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform 0.2s;
+}
+
+.btn-jualMakanan{
     padding:1rem 2rem;
     border:0;
     border-radius:25px;
