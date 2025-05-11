@@ -106,6 +106,11 @@ nav{
     border:1px solid #9C7A2C;
 }
 
+.btn-titip{
+    background:linear-gradient(to right, #9C7A2C, #5A4A1F);
+    color:#fff;
+    border:1px solid #9C7A2C;
+
 .hero-image{
     flex:1;
     max-width:200px;
