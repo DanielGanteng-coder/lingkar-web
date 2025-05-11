@@ -24,6 +24,47 @@
             z-index: 1000;
         }
 
+        /* Tambahkan hamburger menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Perbaikan responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #9C7A2C;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo img {
+        transform: scale(2); /* Sesuaikan ukuran logo di mobile */
+        margin-right: 10px;
+    }
+
+    .btn-login {
+        margin-top: 1rem;
+    }
+}
+
         .logo {
             display: flex;
             align-items: center;
