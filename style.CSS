@@ -108,8 +108,9 @@ nav{
 
 .btn-jualMakanan{
     background:linear-gradient(to right, #9C7A2C, #5A4A1F);
-    color:#9C7A2C;
-    border:1px solid #9C7A2C;
+    color:#fff;
+    border: 1px solid transparent; /* Border transparan agar ukuran tetap sama */
+    position: relative;
 }
 
 .hero-image{
