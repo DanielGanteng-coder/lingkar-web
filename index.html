@@ -4,55 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css">
     <style>
+        /* Tambahan gaya untuk background slideshow */
         .hero {
             position: relative;
+            color: white;
+            overflow: hidden;
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: space-between;
+            padding: 2rem;
         }
 
-        .slideshow-bg {
+        .hero-background img {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-        }
-
-        .slideshow-bg img {
-            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            z-index: 1;
         }
 
-        .slideshow-bg img.active {
+        .hero-background img.active {
             opacity: 1;
         }
 
         .hero-text {
-            z-index: 1;
-            background-color: rgba(255, 255, 255, 0.75);
-            color: #333;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 700px;
-            text-align: center;
+            z-index: 2;
+            max-width: 50%;
+        }
+
+        .hero-image {
+            z-index: 2;
         }
 
         .cta-buttons button {
-            margin: 0.5rem;
-            padding: 10px 20px;
+            margin: 5px;
+            padding: 10px 15px;
             border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
+            border-radius: 8px;
             cursor: pointer;
+            background-color: #ffffffcc;
+            color: #333;
         }
     </style>
 </head>
@@ -63,7 +61,7 @@
             <img src="Logo LINGKAR.png" alt="LINGKAR">
             <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
         </div>
-        <div class="menu-toggle">☰</div>
+         <div class="menu-toggle">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Beranda</a></li>
             <li><a href="products.html">Produk</a></li>
@@ -73,17 +71,13 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with Slideshow -->
+    <!-- Hero Section dengan background slideshow -->
     <section class="hero">
-        <!-- Slideshow Background -->
-        <div class="slideshow-bg">
+        <div class="hero-background">
             <img src="rak-buku.jpg" class="active" alt="Background 1">
             <img src="jaket-denim.jpg" alt="Background 2">
-            <img src="laptop.jpg" alt="Background 3">
-            <img src="alat-dapur.jpg" alt="Background 4">
+            <img src="kamera-canon.jpg" alt="Background 3">
         </div>
-
-        <!-- Teks -->
         <div class="hero-text">
             <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
             <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
@@ -93,25 +87,102 @@
                 <button class="btn-makanan">Jual Makanan Berlebih</button>
             </div>
         </div>
+        <div class="hero-image">
+            <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
+        </div>
     </section>
 
-    <!-- Produk Section (tidak diubah) -->
+    <!-- Produk Section -->
     <section class="produk-list">
-        <!-- ... Produk cards seperti yang sudah kamu tulis ... -->
+        <div class="filter-kategori">
+            <button class="filter-btn active" data-kategori="all">Semua</button>
+            <button class="filter-btn" data-kategori="fashion">Fashion</button>
+            <button class="filter-btn" data-kategori="elektronik">Elektronik</button>
+            <button class="filter-btn" data-kategori="furnitur">Furnitur</button>
+            <button class="filter-btn" data-kategori="makanan">Makanan</button>
+        </div>
+
+        <div class="produk-grid">
+            <!-- Produk 1 -->
+            <div class="produk-card" data-kategori="fashion" data-harga="75000">
+                <img src="Kaos vintage.jpg" alt="Kaos Vintage">
+                <h3>Kaos Vintage 90s</h3>
+                <p class="kondisi">Kondisi: 80%</p>
+                <p class="harga">Rp 75.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 2 -->
+            <div class="produk-card" data-kategori="elektronik" data-harga="450000">
+                <img src="speaker JBL.jpg" alt="Speaker JBL">
+                <h3>Speaker JBL Flip 4</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 450.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 3 -->
+            <div class="produk-card" data-kategori="furnitur" data-harga="350000">
+                <img src="Meja kerja.jpg" alt="Meja Kerja">
+                <h3>Meja Kerja Minimalis</h3>
+                <p class="kondisi">Kondisi: 85%</p>
+                <p class="harga">Rp 350.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 4 -->
+            <div class="produk-card" data-kategori="fashion" data-harga="120000">
+                <img src="Jaket denim.jpg" alt="Jaket Denim">
+                <h3>Jaket Denim Vintage</h3>
+                <p class="kondisi">Kondisi: 75%</p>
+                <p class="harga">Rp 120.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 5 -->
+            <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
+                <img src="kamera canon.jpg" alt="Kamera Canon">
+                <h3>Kamera Canon EOS M50</h3>
+                <p class="kondisi">Kondisi: 95%</p>
+                <p class="harga">Rp 5.999.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 6 -->
+            <div class="produk-card" data-kategori="furnitur" data-harga="899000">
+                <img src="rak buku.jpg" alt="Rak Buku">
+                <h3>Rak Buku Kayu</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 899.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 7 -->
+            <div class="produk-card" data-kategori="makanan" data-harga="30000">
+                <img src="sayur kol.jpg" alt="Sayur Kol">
+                <h3>Sayur Kol</h3>
+                <p class="kondisi">Kondisi: 99%</p>
+                <p class="harga">Rp 30.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <!-- Produk 8 -->
+            <div class="produk-card" data-kategori="makanan" data-harga="80000">
+                <img src="brownis.jpg" alt="Brownis">
+                <h3>Brownis</h3>
+                <p class="kondisi">Kondisi: 100%</p>
+                <p class="harga">Rp 80.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+        </div>
     </section>
 
-    <!-- Script untuk slideshow -->
+    <!-- Script slideshow -->
     <script>
-        const slides = document.querySelectorAll('.slideshow-bg img');
-        let index = 0;
+        const images = document.querySelectorAll('.hero-background img');
+        let current = 0;
 
-        setInterval(() => {
-            slides[index].classList.remove('active');
-            index = (index + 1) % slides.length;
-            slides[index].classList.add('active');
-        }, 5000);
+        function showNextImage() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
     </script>
-
     <script src="script.js"></script>
 </body>
 </html>
