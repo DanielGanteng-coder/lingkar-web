@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
-    <link rel="stylesheet" href="style.CSS"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="Logo LINGKAR.png" alt="LINGKAR">
-            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+            <span class="brand-name">LINGKAR</span>
         </div>
-         <div class="menu-toggle">☰</div>
+        <div class="menu-toggle">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Beranda</a></li>
-            <li><a href="products.html">Produk</a></li>
-            <li><a href="penitipan.html">Penitipan</a></li>
-            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="products.html">Jual Beli</a></li>
+            <li><a href="tukar.html">Tukar Barang</a></li>
+            <li><a href="donasi.html">Donasi</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
             <li><a href="login.html" class="btn-login">Login</a></li>
         </ul>
     </nav>
@@ -27,15 +28,16 @@
     <section class="hero">
         <div class="hero-text">
             <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-            <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
+            <p>Titip, jual, tukar, atau donasikan barang preloved Anda dengan mudah dan aman.</p>
             <div class="cta-buttons">
                 <button class="btn-jual">Jual Barang</button>
                 <button class="btn-titip">Titip Barang</button>
-                <button class="btn-makanan">Jual Makanan Berlebih</button>
+                <button class="btn-tukar">Tukar Barang</button>
+                <button class="btn-donasi">Donasikan Barang</button>
             </div>
         </div>
         <div class="hero-image">
-            <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
+            <img src="hero-illustration.png" alt="Ilustrasi LINGKAR">
         </div>
     </section>
 
@@ -50,79 +52,10 @@
         </div>
 
         <div class="produk-grid">
-            <!-- Product 1 -->
-            <div class="produk-card" data-kategori="fashion" data-harga="75000">
-                <img src="Kaos vintage.jpg" alt="Kaos Vintage">
-                <h3>Kaos Vintage 90s</h3>
-                <p class="kondisi">Kondisi: 80%</p>
-                <p class="harga">Rp 75.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-             <!-- Product 2 -->
-            <div class="produk-card" data-kategori="elektronik" data-harga="450000">
-                <img src="speaker JBL.jpg" alt="Speaker JBL">
-                <h3>Speaker JBL Flip 4</h3>
-                <p class="kondisi">Kondisi: 90%</p>
-                <p class="harga">Rp 450.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="produk-card" data-kategori="furnitur" data-harga="350000">
-                <img src="Meja kerja.jpg" alt="Meja Kerja">
-                <h3>Meja Kerja Minimalis</h3>
-                <p class="kondisi">Kondisi: 85%</p>
-                <p class="harga">Rp 350.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="produk-card" data-kategori="fashion" data-harga="120000">
-                <img src="Jaket denim.jpg" alt="Jaket Denim">
-                <h3>Jaket Denim Vintage</h3>
-                <p class="kondisi">Kondisi: 75%</p>
-                <p class="harga">Rp 120.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
-                <img src="kamera canon.jpg" alt="Kamera Canon">
-                <h3>Kamera Canon EOS M50</h3>
-                <p class="kondisi">Kondisi: 95%</p>
-                <p class="harga">Rp 5.999.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-        <!-- Product 6 -->
-            <div class="produk-card" data-kategori="furnitur" data-harga="899000">
-                <img src="rak buku.jpg" alt="Rak Buku">
-                <h3>Rak Buku Kayu</h3>
-                <p class="kondisi">Kondisi: 90%</p>
-                <p class="harga">Rp 899.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-        <!-- Product 7 -->
-            <div class="produk-card" data-kategori="makanan" data-harga=30000">
-                <img src="sayur kol.jpg" alt="Makanan">
-                <h3>Sayur Kol</h3>
-                <p class="kondisi">Kondisi: 99%</p>
-                <p class="harga">Rp 30.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-         <!-- Product 8 -->
-            <div class="produk-card" data-kategori="makanan" data-harga=80000">
-                <img src="brownis.jpg" alt="Makanan">
-                <h3>Brownis</h3>
-                <p class="kondisi">Kondisi: 100%</p>
-                <p class="harga">Rp 80.000</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-            
+            <!-- Produk akan dimuat dinamis oleh JavaScript berdasarkan kategori dan tag -->
         </div>
     </section>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
