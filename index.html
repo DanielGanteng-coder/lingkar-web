@@ -1,192 +1,172 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LINGKAR - Ekonomi Sirkular Palu</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    /* Tambahan untuk ::before logo samar */
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 5%;
-      transform: translateY(-50%);
-      width: 300px;
-      height: 300px;
-      background-image: url('Logo LINGKAR.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.08;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-    }
-
-    .background-slideshow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .background-slideshow .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .background-slideshow .slide.active {
-      opacity: 1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINGKAR - Ekonomi Sirkular Palu</title>
+    <link rel="stylesheet" href="style.CSS"/>
 </head>
 <body>
-  <div class="background-slideshow">
+    <div class="background-slideshow">
     <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
     <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
     <div class="slide" style="background-image: url('Laptop.jpg');"></div>
     <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
-  </div>
+</div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="Logo LINGKAR.png" alt="LINGKAR">
+            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+        </div>
+         <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="products.html">Produk</a></li>
+            <li><a href="penitipan.html">Penitipan</a></li>
+            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">
-      <img src="Logo LINGKAR.png" alt="LINGKAR">
-      <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
-    </div>
-    <div class="menu-toggle">☰</div>
-    <ul class="nav-links">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="products.html">Produk</a></li>
-      <li><a href="penitipan.html">Penitipan</a></li>
-      <li><a href="tentang kami.html">Tentang Kami</a></li>
-      <li><a href="login.html" class="btn-login">Login</a></li>
-    </ul>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
+            <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
+            <div class="cta-buttons">
+                <button class="btn-jual">Jual Barang</button>
+                <button class="btn-titip">Titip Barang</button>
+                <button class="btn-makanan">Jual Makanan Berlebih</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
+        </div>
+    </section>
+    <style.css>
+        
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-      <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
-      <div class="cta-buttons">
-        <button class="btn-jual">Jual Barang</button>
-        <button class="btn-titip">Titip Barang</button>
-        <button class="btn-makanan">Jual Makanan Berlebih</button>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
-    </div>
-  </section>
+    <!-- Produk Section -->
+    <section class="produk-list">
+        <div class="filter-kategori">
+            <button class="filter-btn active" data-kategori="all">Semua</button>
+            <button class="filter-btn" data-kategori="fashion">Fashion</button>
+            <button class="filter-btn" data-kategori="elektronik">Elektronik</button>
+            <button class="filter-btn" data-kategori="furnitur">Furnitur</button>
+            <button class="filter-btn" data-kategori="makanan">Makanan</button>
+        </div>
 
-  <!-- Produk Section -->
-  <section class="produk-list">
-    <div class="filter-kategori">
-      <button class="filter-btn active" data-kategori="all">Semua</button>
-      <button class="filter-btn" data-kategori="fashion">Fashion</button>
-      <button class="filter-btn" data-kategori="elektronik">Elektronik</button>
-      <button class="filter-btn" data-kategori="furnitur">Furnitur</button>
-      <button class="filter-btn" data-kategori="makanan">Makanan</button>
-    </div>
+        <div class="produk-grid">
+            <!-- Product 1 -->
+            <div class="produk-card" data-kategori="fashion" data-harga="75000">
+                <img src="Kaos vintage.jpg" alt="Kaos Vintage">
+                <h3>Kaos Vintage 90s</h3>
+                <p class="kondisi">Kondisi: 80%</p>
+                <p class="harga">Rp 75.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+             <!-- Product 2 -->
+            <div class="produk-card" data-kategori="elektronik" data-harga="450000">
+                <img src="speaker JBL.jpg" alt="Speaker JBL">
+                <h3>Speaker JBL Flip 4</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 450.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-    <div class="produk-grid">
-      <div class="produk-card" data-kategori="fashion" data-harga="75000">
-        <img src="Kaos vintage.jpg" alt="Kaos Vintage">
-        <h3>Kaos Vintage 90s</h3>
-        <p class="kondisi">Kondisi: 80%</p>
-        <p class="harga">Rp 75.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+            <!-- Product 3 -->
+            <div class="produk-card" data-kategori="furnitur" data-harga="350000">
+                <img src="Meja kerja.jpg" alt="Meja Kerja">
+                <h3>Meja Kerja Minimalis</h3>
+                <p class="kondisi">Kondisi: 85%</p>
+                <p class="harga">Rp 350.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-      <div class="produk-card" data-kategori="elektronik" data-harga="450000">
-        <img src="speaker JBL.jpg" alt="Speaker JBL">
-        <h3>Speaker JBL Flip 4</h3>
-        <p class="kondisi">Kondisi: 90%</p>
-        <p class="harga">Rp 450.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+            <!-- Product 4 -->
+            <div class="produk-card" data-kategori="fashion" data-harga="120000">
+                <img src="Jaket denim.jpg" alt="Jaket Denim">
+                <h3>Jaket Denim Vintage</h3>
+                <p class="kondisi">Kondisi: 75%</p>
+                <p class="harga">Rp 120.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-      <div class="produk-card" data-kategori="furnitur" data-harga="350000">
-        <img src="Meja kerja.jpg" alt="Meja Kerja">
-        <h3>Meja Kerja Minimalis</h3>
-        <p class="kondisi">Kondisi: 85%</p>
-        <p class="harga">Rp 350.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+            <!-- Product 5 -->
+            <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
+                <img src="kamera canon.jpg" alt="Kamera Canon">
+                <h3>Kamera Canon EOS M50</h3>
+                <p class="kondisi">Kondisi: 95%</p>
+                <p class="harga">Rp 5.999.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-      <div class="produk-card" data-kategori="fashion" data-harga="120000">
-        <img src="Jaket denim.jpg" alt="Jaket Denim">
-        <h3>Jaket Denim Vintage</h3>
-        <p class="kondisi">Kondisi: 75%</p>
-        <p class="harga">Rp 120.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+        <!-- Product 6 -->
+            <div class="produk-card" data-kategori="furnitur" data-harga="899000">
+                <img src="rak buku.jpg" alt="Rak Buku">
+                <h3>Rak Buku Kayu</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 899.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-      <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
-        <img src="kamera canon.jpg" alt="Kamera Canon">
-        <h3>Kamera Canon EOS M50</h3>
-        <p class="kondisi">Kondisi: 95%</p>
-        <p class="harga">Rp 5.999.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+        <!-- Product 7 -->
+            <div class="produk-card" data-kategori="makanan" data-harga=30000">
+                <img src="sayur kol.jpg" alt="Makanan">
+                <h3>Sayur Kol</h3>
+                <p class="kondisi">Kondisi: 99%</p>
+                <p class="harga">Rp 30.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-      <div class="produk-card" data-kategori="furnitur" data-harga="899000">
-        <img src="rak buku.jpg" alt="Rak Buku">
-        <h3>Rak Buku Kayu</h3>
-        <p class="kondisi">Kondisi: 90%</p>
-        <p class="harga">Rp 899.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+         <!-- Product 8 -->
+            <div class="produk-card" data-kategori="makanan" data-harga=80000">
+                <img src="brownis.jpg" alt="Makanan">
+                <h3>Brownis</h3>
+                <p class="kondisi">Kondisi: 100%</p>
+                <p class="harga">Rp 80.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <style>
+                /* Background slideshow */
+.background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
 
-      <div class="produk-card" data-kategori="makanan" data-harga="30000">
-        <img src="sayur kol.jpg" alt="Makanan">
-        <h3>Sayur Kol</h3>
-        <p class="kondisi">Kondisi: 99%</p>
-        <p class="harga">Rp 30.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
+.background-slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-      <div class="produk-card" data-kategori="makanan" data-harga="80000">
-        <img src="brownis.jpg" alt="Makanan">
-        <h3>Brownis</h3>
-        <p class="kondisi">Kondisi: 100%</p>
-        <p class="harga">Rp 80.000</p>
-        <button class="btn-beli">Beli Sekarang</button>
-      </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-  <script>
+.background-slideshow .slide.active {
+    opacity: 1;
+}
+        </div>
+    </section>
+<script src="script.js"></script>
+    <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.background-slideshow .slide');
 
     function showNextSlide() {
-      slides[slideIndex].classList.remove('active');
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add('active');
+        slides[slideIndex].classList.remove('active');
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add('active');
     }
 
-    setInterval(showNextSlide, 4000);
-  </script>
+    setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
+</script>
 </body>
 </html>
