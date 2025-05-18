@@ -13,65 +13,6 @@
     <div class="slide" style="background-image: url('Laptop.jpg');"></div>
     <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
 </div>
-    <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <title>Test Hero</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
-
-    .hero {
-      position: relative;
-      padding: 100px;
-      background-color: white;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 300px;
-      height: 300px;
-      background-image: url('https://via.placeholder.com/300x300.png?text=LINGKAR');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.08;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-text h1 {
-      font-size: 2em;
-    }
-
-    .hero-text p {
-      font-size: 1.2em;
-    }
-  </style>
-</head>
-<body>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-      <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
-    </div>
-  </section>
-</body>
-</html>
-
-
     <!-- Navbar -->
     <nav>
         <div class="logo">
@@ -227,6 +168,20 @@
 
     setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
 </script>
+<style.CSS>
+                .hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    background-color: rgba(255, 255, 255, 0); /* transparan jika perlu */
+    background-image: url('Logo LINGKAR.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 300px; /* sesuaikan ukuran logo */
+}
+
 
 </body>
 </html>
