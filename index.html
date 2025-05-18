@@ -66,6 +66,27 @@
         <div class="hero-image">
             <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR" />
         </div>
+        <section class="hero">
+  <!-- Background Slideshow Images -->
+  <div class="slideshow-bg">
+      <img src="rak-buku.jpg" class="active" />
+      <img src="jaket-denim.jpg" />
+      <img src="laptop.jpg" />
+      <img src="alat-dapur.jpg" />
+  </div>
+
+  <!-- Teks di Atas Background -->
+  <div class="hero-text">
+      <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
+      <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
+      <div class="cta-buttons">
+          <button class="btn-jual">Jual Barang</button>
+          <button class="btn-titip">Beli Barang</button>
+          <button class="btn-Donasi">Donasikan Barang</button>
+      </div>
+  </div>
+</section>
+
     </section>
 
     <!-- Search Bar with Smart Filter -->
@@ -334,6 +355,46 @@
 </script>
 
 <style>
+    .hero {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slideshow-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.slideshow-bg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-bg img.active {
+    opacity: 1;
+}
+
+.hero-text {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.75); /* warna putih transparan */
+    color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+}
+
     /* Background slideshow */
 .background-slideshow {
     position: fixed;
@@ -387,6 +448,17 @@
                 
 
 <script src="script.js"></script>
+                <script>
+    const slides = document.querySelectorAll('.slideshow-bg img');
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }, 5000);
+</script>
+
 </body>
 </html>
 saya ingin merubah backgroundnya menjadi gambar yang bisa bergerak kayak slide sebanyak 4 slide. buatkan saya. dengan gambar slide rak buku, jacket denim, laptop, alat dapur.
