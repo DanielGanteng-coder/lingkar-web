@@ -6,7 +6,27 @@
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
     <link rel="stylesheet" href="style.CSS" />
 </head>
+    <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.background-slideshow .slide');
+
+    function showNextSlide() {
+        slides[slideIndex].classList.remove('active');
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
+</script>
+
 <body>
+    <div class="background-slideshow">
+    <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
+    <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
+    <div class="slide" style="background-image: url('Laptop.jpg');"></div>
+    <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
+</div>
+
     <!-- Navbar -->
     <nav>
         <div class="logo">
@@ -29,6 +49,7 @@
             <li><a href="tentang kami.html">Tentang Kami</a></li>
             <li><a href="login.html" class="btn-login">Login</a></li>
         </ul>
+        
     </nav>
 
     <!-- Hero Section -->
@@ -313,6 +334,31 @@
 </script>
 
 <style>
+    /* Background slideshow */
+.background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.background-slideshow .slide.active {
+    opacity: 1;
+}
+
     /* Label kualitas barang */
     .label-kualitas {
         font-weight: bold;
@@ -338,6 +384,7 @@
         margin-bottom: 0.5rem;
     }
 </style>
+                
 
 <script src="script.js"></script>
 </body>
