@@ -6,40 +6,36 @@
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Background slideshow untuk .hero */
         .hero {
             position: relative;
+            overflow: hidden;
             height: 100vh;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden;
         }
 
-        .slideshow-bg {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             z-index: -1;
+            animation: slideShow 20s infinite;
         }
 
-        .slideshow-bg img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .slideshow-bg img.active {
-            opacity: 1;
+        @keyframes slideShow {
+            0% { background-image: url('rak-buku.jpg'); }
+            25% { background-image: url('jaket-denim.jpg'); }
+            50% { background-image: url('laptop.jpg'); }
+            75% { background-image: url('alat-dapur.jpg'); }
+            100% { background-image: url('rak-buku.jpg'); }
         }
 
         .hero-text {
@@ -59,99 +55,42 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
-        nav {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            z-index: 10;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .btn-login {
-            background-color: #ff6600;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            color: white;
-        }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav>
-    <div class="logo">
-        <img src="Logo LINGKAR.png" alt="LINGKAR" width="40" />
-        <span style="margin-left: 8px; font-size: 1.2rem;">LINGKAR</span>
-    </div>
-    <ul class="nav-links">
-        <li><a href="#home">Beranda</a></li>
-        <li><a href="products.html">Produk</a></li>
-        <li><a href="penitipan.html">Donasi</a></li>
-        <li><a href="tentang kami.html">Tentang Kami</a></li>
-        <li><a href="login.html" class="btn-login">Login</a></li>
-    </ul>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-    <!-- Slideshow Background -->
-    <div class="slideshow-bg">
-        <img src="rak-buku.jpg" class="active" />
-        <img src="jaket-denim.jpg" />
-        <img src="laptop.jpg" />
-        <img src="alat-dapur.jpg" />
-    </div>
-
-    <!-- Teks -->
-    <div class="hero-text">
-        <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-        <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
-        <div class="cta-buttons">
-            <button class="btn-jual">Jual Barang</button>
-            <button class="btn-titip">Beli Barang</button>
-            <button class="btn-Donasi">Donasikan Barang</button>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="Logo LINGKAR.png" alt="LINGKAR" />
+            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">
+                LINGKAR
+            </span>
         </div>
-    </div>
-</section>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="products.html">Produk</a></li>
+            <li><a href="penitipan.html">Donasi</a></li>
+            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
 
-<!-- JavaScript Slideshow -->
-<script>
-    const slides = document.querySelectorAll('.slideshow-bg img');
-    let index = 0;
+    <!-- Hero Section with Slideshow -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
+            <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
+            <div class="cta-buttons">
+                <button class="btn-jual">Jual Barang</button>
+                <button class="btn-titip">Beli Barang</button>
+                <button class="btn-Donasi">Donasikan Barang</button>
+            </div>
+        </div>
+    </section>
 
-    setInterval(() => {
-        slides[index].classList.remove('active');
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('active');
-    }, 5000); // ganti gambar setiap 5 detik
-</script>
+    <!-- (Bagian lain tetap seperti di kode Anda sebelumnya...) -->
 
 </body>
 </html>
-
-
