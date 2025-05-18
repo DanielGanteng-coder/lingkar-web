@@ -4,68 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        /* Background slideshow untuk .hero */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            height: 100vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -1;
-            animation: slideShow 20s infinite;
-        }
-
-        @keyframes slideShow {
-            0% { background-image: url('rak-buku.jpg'); }
-            25% { background-image: url('jaket-denim.jpg'); }
-            50% { background-image: url('laptop.jpg'); }
-            75% { background-image: url('alat-dapur.jpg'); }
-            100% { background-image: url('rak-buku.jpg'); }
-        }
-
-        .hero-text {
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .btn-jual, .btn-titip, .btn-Donasi {
-            margin: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            background-color: #ff6600;
-            color: white;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.CSS" />
 </head>
 <body>
-
     <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="Logo LINGKAR.png" alt="LINGKAR" />
-            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">
-                LINGKAR
-            </span>
+            <span
+                style="
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: white;
+                    font-size: 1.2rem;
+                    margin-left: 8px;
+                "
+                >LINGKAR</span
+            >
         </div>
         <div class="menu-toggle">☰</div>
         <ul class="nav-links">
@@ -77,7 +31,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with Slideshow -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
             <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
@@ -88,9 +42,306 @@
                 <button class="btn-Donasi">Donasikan Barang</button>
             </div>
         </div>
+        <div class="hero-image">
+            <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR" />
+        </div>
     </section>
 
-    <!-- (Bagian lain tetap seperti di kode Anda sebelumnya...) -->
+    <!-- Search Bar with Smart Filter -->
+    <section class="search-section" style="padding: 1rem; background-color: #f9f9f9;">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari barang... (misal: jaket, elektronik, furnitur)"
+            style="width: 60%; padding: 0.5rem; font-size: 1rem;"
+        />
+        <select id="qualityFilter" style="padding: 0.5rem; margin-left: 1rem;">
+            <option value="all">Semua Kualitas</option>
+            <option value="A">Kualitas A (Bagus)</option>
+            <option value="B">Kualitas B (Standar)</option>
+            <option value="C">Kualitas C (Perlu Perbaikan)</option>
+        </select>
+        <button onclick="filterProducts()" style="padding: 0.5rem 1rem; margin-left: 1rem;">Cari</button>
+    </section>
 
+    <!-- Produk Section -->
+    <section class="produk-list">
+        <div class="filter-kategori">
+            <button class="filter-btn active" data-kategori="all">Semua</button>
+            <button class="filter-btn" data-kategori="fashion">Fashion</button>
+            <button class="filter-btn" data-kategori="elektronik">Elektronik</button>
+            <button class="filter-btn" data-kategori="furnitur">Furnitur</button>
+            <button class="filter-btn" data-kategori="mainan">mainan</button>
+        </div>
+
+        <div class="produk-grid">
+            <!-- Product 1 -->
+            <div
+                class="produk-card"
+                data-kategori="fashion"
+                data-harga="75000"
+                data-kualitas="B"
+                data-nama="Kaos Vintage 90s"
+            >
+                <img src="Kaos vintage.jpg" alt="Kaos Vintage" />
+                <h3>Kaos Vintage 90s</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-B">B</span>
+                    &nbsp;|&nbsp; Kondisi: 80%
+                </p>
+                <p class="harga">Rp 75.000</p>
+                <div class="rating" title="Rating: 4.5 dari 5">
+                    ★★★★☆ (4.5)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+                class="produk-card"
+                data-kategori="elektronik"
+                data-harga="450000"
+                data-kualitas="A"
+                data-nama="Speaker JBL Flip 4"
+            >
+                <img src="speaker JBL.jpg" alt="Speaker JBL" />
+                <h3>Speaker JBL Flip 4</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-A">A</span>
+                    &nbsp;|&nbsp; Kondisi: 90%
+                </p>
+                <p class="harga">Rp 450.000</p>
+                <div class="rating" title="Rating: 4.8 dari 5">
+                    ★★★★★ (4.8)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+                class="produk-card"
+                data-kategori="furnitur"
+                data-harga="350000"
+                data-kualitas="B"
+                data-nama="Meja Kerja Minimalis"
+            >
+                <img src="Meja kerja.jpg" alt="Meja Kerja" />
+                <h3>Meja Kerja Minimalis</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-B">B</span>
+                    &nbsp;|&nbsp; Kondisi: 85%
+                </p>
+                <p class="harga">Rp 350.000</p>
+                <div class="rating" title="Rating: 4.2 dari 5">
+                    ★★★★☆ (4.2)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div
+                class="produk-card"
+                data-kategori="fashion"
+                data-harga="120000"
+                data-kualitas="C"
+                data-nama="Jaket Denim Vintage"
+            >
+                <img src="Jaket denim.jpg" alt="Jaket Denim" />
+                <h3>Jaket Denim Vintage</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-C">C</span>
+                    &nbsp;|&nbsp; Kondisi: 75%
+                </p>
+                <p class="harga">Rp 120.000</p>
+                <div class="rating" title="Rating: 3.8 dari 5">
+                    ★★★☆☆ (3.8)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div
+                class="produk-card"
+                data-kategori="elektronik"
+                data-harga="5999000"
+                data-kualitas="A"
+                data-nama="Kamera Canon EOS M50"
+            >
+                <img src="kamera canon.jpg" alt="Kamera Canon" />
+                <h3>Kamera Canon EOS M50</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-A">A</span>
+                    &nbsp;|&nbsp; Kondisi: 95%
+                </p>
+                <p class="harga">Rp 5.999.000</p>
+                <div class="rating" title="Rating: 5 dari 5">
+                    ★★★★★ (5)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div
+                class="produk-card"
+                data-kategori="furnitur"
+                data-harga="899000"
+                data-kualitas="A"
+                data-nama="Rak Buku Kayu"
+            >
+                <img src="rak buku.jpg" alt="Rak Buku" />
+                <h3>Rak Buku Kayu</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-A">A</span>
+                    &nbsp;|&nbsp; Kondisi: 90%
+                </p>
+                <p class="harga">Rp 899.000</p>
+                <div class="rating" title="Rating: 4.7 dari 5">
+                    ★★★★☆ (4.7)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div
+                class="produk-card"
+                data-kategori="fashion"
+                data-harga="15.000"
+                data-kualitas="A"
+                data-nama="Topi"
+            >
+                <img src="Topi.jpg" alt="Topi" />
+                <h3>mantel</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-A">A</span>
+                    &nbsp;|&nbsp; Kondisi: 97%
+                </p>
+                <p class="harga">Rp 15.000</p>
+                <div class="rating" title="Rating: 4.9 dari 5">
+                    ★★★★★ (4.9)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div
+                class="produk-card"
+                data-kategori="elektronik"
+                data-harga="2.000.000"
+                data-kualitas="B"
+                data-nama="Laptop"
+            >
+                <img src="Laptop.jpg" alt="Laptop" />
+                <h3>Laptop</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-B">B</span>
+                    &nbsp;|&nbsp; Kondisi: 92%
+                </p>
+                <p class="harga">Rp 2.000.000</p>
+                <div class="rating" title="Rating: 4 dari 4">
+                    ★★★★ (4)
+                </div>
+                   <div
+                class="produk-card"
+                data-kategori="furniture"
+                data-harga="30.000"
+                data-kualitas="A"
+                data-nama="Alat Dapur"
+            >
+                <img src="Alat dapur.jpg" alt="Alat dapur" />
+                <h3>Alat dapur</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-A">A</span>
+                    &nbsp;|&nbsp; Kondisi: 100%
+                </p>
+                <p class="harga">Rp 30.000</p>
+                <div class="rating" title="Rating: 4.9 dari 5">
+                    ★★★★★ (5.0)
+                </div>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+            <div
+                class="produk-card"
+                data-kategori="fashion"
+                data-harga="50.000"
+                data-kualitas="B"
+                data-nama="sepatu"
+            >
+                <img src="Sepatu.jpg" alt="Sepatu" />
+                <h3>Sepatu</h3>
+                <p class="kondisi">
+                    <strong>Kualitas:</strong>
+                    <span class="label-kualitas label-C">C</span>
+                    &nbsp;|&nbsp; Kondisi: 80%
+                </p>
+                <p class="harga">Rp 50.000</p>
+                <div class="rating" title="Rating: 3 dari 3">
+                    ★★★ (3)
+                </div>
+        </div>
+    </section>
+
+<script>
+    // Contoh fungsi filter berdasarkan input dan kualitas
+    function filterProducts() {
+        const searchValue = document.getElementById('searchInput').value.toLowerCase();
+        const qualityValue = document.getElementById('qualityFilter').value;
+        const cards = document.querySelectorAll('.produk-card');
+
+        cards.forEach(card => {
+            const nama = card.dataset.nama.toLowerCase();
+            const kualitas = card.dataset.kualitas;
+
+            const matchesSearch = nama.includes(searchValue) || searchValue === '';
+            const matchesQuality = qualityValue === 'all' || kualitas === qualityValue;
+
+            if (matchesSearch && matchesQuality) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+<style>
+    /* Label kualitas barang */
+    .label-kualitas {
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
+        color: white;
+        font-size: 0.9rem;
+    }
+    .label-A {
+        background-color: #28a745; /* hijau */
+    }
+    .label-B {
+        background-color: #ffc107; /* kuning */
+        color: #333;
+    }
+    .label-C {
+        background-color: #dc3545; /* merah */
+    }
+    /* Rating */
+    .rating {
+        color: #ffb400;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<script src="script.js"></script>
 </body>
 </html>
+saya ingin merubah backgroundnya menjadi gambar yang bisa bergerak kayak slide sebanyak 4 slide. buatkan saya. dengan gambar slide rak buku, jacket denim, laptop, alat dapur.
+
+
