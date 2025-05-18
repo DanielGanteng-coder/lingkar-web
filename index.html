@@ -4,57 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Tambahan gaya untuk background slideshow */
-        .hero {
-            position: relative;
-            color: white;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2rem;
-        }
-
-        .hero-background img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 1;
-        }
-
-        .hero-background img.active {
-            opacity: 1;
-        }
-
-        .hero-text {
-            z-index: 2;
-            max-width: 50%;
-        }
-
-        .hero-image {
-            z-index: 2;
-        }
-
-        .cta-buttons button {
-            margin: 5px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background-color: #ffffffcc;
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="style.CSS"/>
 </head>
 <body>
+    <div class="background-slideshow">
+    <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
+    <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
+    <div class="slide" style="background-image: url('Laptop.jpg');"></div>
+    <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
+</div>
+
     <!-- Navbar -->
     <nav>
         <div class="logo">
@@ -71,13 +30,8 @@
         </ul>
     </nav>
 
-    <!-- Hero Section dengan background slideshow -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <img src="rak-buku.jpg" class="active" alt="Background 1">
-            <img src="jaket-denim.jpg" alt="Background 2">
-            <img src="kamera-canon.jpg" alt="Background 3">
-        </div>
         <div class="hero-text">
             <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
             <p>Titip atau beli barang preloved dengan aman dan ramah lingkungan</p>
@@ -103,7 +57,7 @@
         </div>
 
         <div class="produk-grid">
-            <!-- Produk 1 -->
+            <!-- Product 1 -->
             <div class="produk-card" data-kategori="fashion" data-harga="75000">
                 <img src="Kaos vintage.jpg" alt="Kaos Vintage">
                 <h3>Kaos Vintage 90s</h3>
@@ -111,7 +65,7 @@
                 <p class="harga">Rp 75.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 2 -->
+             <!-- Product 2 -->
             <div class="produk-card" data-kategori="elektronik" data-harga="450000">
                 <img src="speaker JBL.jpg" alt="Speaker JBL">
                 <h3>Speaker JBL Flip 4</h3>
@@ -119,7 +73,8 @@
                 <p class="harga">Rp 450.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 3 -->
+
+            <!-- Product 3 -->
             <div class="produk-card" data-kategori="furnitur" data-harga="350000">
                 <img src="Meja kerja.jpg" alt="Meja Kerja">
                 <h3>Meja Kerja Minimalis</h3>
@@ -127,7 +82,8 @@
                 <p class="harga">Rp 350.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 4 -->
+
+            <!-- Product 4 -->
             <div class="produk-card" data-kategori="fashion" data-harga="120000">
                 <img src="Jaket denim.jpg" alt="Jaket Denim">
                 <h3>Jaket Denim Vintage</h3>
@@ -135,7 +91,8 @@
                 <p class="harga">Rp 120.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 5 -->
+
+            <!-- Product 5 -->
             <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
                 <img src="kamera canon.jpg" alt="Kamera Canon">
                 <h3>Kamera Canon EOS M50</h3>
@@ -143,7 +100,8 @@
                 <p class="harga">Rp 5.999.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 6 -->
+
+        <!-- Product 6 -->
             <div class="produk-card" data-kategori="furnitur" data-harga="899000">
                 <img src="rak buku.jpg" alt="Rak Buku">
                 <h3>Rak Buku Kayu</h3>
@@ -151,38 +109,64 @@
                 <p class="harga">Rp 899.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 7 -->
-            <div class="produk-card" data-kategori="makanan" data-harga="30000">
-                <img src="sayur kol.jpg" alt="Sayur Kol">
+
+        <!-- Product 7 -->
+            <div class="produk-card" data-kategori="makanan" data-harga=30000">
+                <img src="sayur kol.jpg" alt="Makanan">
                 <h3>Sayur Kol</h3>
                 <p class="kondisi">Kondisi: 99%</p>
                 <p class="harga">Rp 30.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <!-- Produk 8 -->
-            <div class="produk-card" data-kategori="makanan" data-harga="80000">
-                <img src="brownis.jpg" alt="Brownis">
+
+         <!-- Product 8 -->
+            <div class="produk-card" data-kategori="makanan" data-harga=80000">
+                <img src="brownis.jpg" alt="Makanan">
                 <h3>Brownis</h3>
                 <p class="kondisi">Kondisi: 100%</p>
                 <p class="harga">Rp 80.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
+            <style>
+                /* Background slideshow */
+.background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.background-slideshow .slide.active {
+    opacity: 1;
+}
         </div>
     </section>
-
-    <!-- Script slideshow -->
+<script src="script.js"></script>
     <script>
-        const images = document.querySelectorAll('.hero-background img');
-        let current = 0;
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.background-slideshow .slide');
 
-        function showNextImage() {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
-        }
+    function showNextSlide() {
+        slides[slideIndex].classList.remove('active');
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add('active');
+    }
 
-        setInterval(showNextImage, 5000);
-    </script>
-    <script src="script.js"></script>
+    setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
+</script>
+
 </body>
 </html>
