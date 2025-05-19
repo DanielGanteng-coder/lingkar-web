@@ -5,21 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
     <link rel="stylesheet" href="style.CSS"/>
+    <style>
+        /* Background slideshow */
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-slideshow .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .background-slideshow .slide.active {
+            opacity: 1;
+        }
+
+        .search-filter-container {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            color: white;
+        }
+
+        .search-filter-container input[type="text"],
+        .search-filter-container input[type="number"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        .price-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .price-filter button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="background-slideshow">
-    <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
-    <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
-    <div class="slide" style="background-image: url('Laptop.jpg');"></div>
-    <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
-</div>
+        <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
+        <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
+        <div class="slide" style="background-image: url('Laptop.jpg');"></div>
+        <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
+    </div>
+
     <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="Logo LINGKAR.png" alt="LINGKAR">
             <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
         </div>
-         <div class="menu-toggle">☰</div>
+        <div class="menu-toggle">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Beranda</a></li>
             <li><a href="products.html">Produk</a></li>
@@ -30,11 +90,10 @@
     </nav>
 
     <!-- Hero Section -->
-    
     <section class="hero">
         <div class="hero-text">
             <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-            <p>Jual atau dnoasikan barang preloved anda dengan aman dan ramah lingkungan</p>
+            <p>Jual atau donasikan barang preloved anda dengan aman dan ramah lingkungan</p>
             <div class="cta-buttons">
                 <button class="btn-jual">Jual Barang</button>
                 <button class="btn-titip">Beli Barang</button>
@@ -46,7 +105,7 @@
             <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
         </div>
     </section>
-  
+
     <!-- Produk Section -->
     <section class="produk-list">
         <div class="filter-kategori">
@@ -58,8 +117,20 @@
             <button class="filter-btn" data-kategori="lelang">Lelang</button>
         </div>
 
+        <!-- Search and Price Filter -->
+        <div class="search-filter-container">
+            <input type="text" id="searchInput" placeholder="Cari produk..." />
+            <div class="price-filter">
+                <label for="minPrice">Min Harga:</label>
+                <input type="number" id="minPrice" placeholder="0">
+                <label for="maxPrice">Max Harga:</label>
+                <input type="number" id="maxPrice" placeholder="1000000">
+                <button onclick="applyFilters()">Terapkan</button>
+            </div>
+        </div>
+
         <div class="produk-grid">
-            <!-- Product 1 -->
+            <!-- Product Cards -->
             <div class="produk-card" data-kategori="fashion" data-harga="75000">
                 <img src="Kaos vintage.jpg" alt="Kaos Vintage">
                 <h3>Kaos Vintage 90s</h3>
@@ -67,7 +138,7 @@
                 <p class="harga">Rp 75.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-             <!-- Product 2 -->
+
             <div class="produk-card" data-kategori="elektronik" data-harga="450000">
                 <img src="speaker JBL.jpg" alt="Speaker JBL">
                 <h3>Speaker JBL Flip 4</h3>
@@ -76,7 +147,6 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-            <!-- Product 3 -->
             <div class="produk-card" data-kategori="furnitur" data-harga="350000">
                 <img src="Meja kerja.jpg" alt="Meja Kerja">
                 <h3>Meja Kerja Minimalis</h3>
@@ -85,7 +155,6 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-            <!-- Product 4 -->
             <div class="produk-card" data-kategori="fashion" data-harga="120000">
                 <img src="Jaket denim.jpg" alt="Jaket Denim">
                 <h3>Jaket Denim Vintage</h3>
@@ -94,7 +163,6 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-            <!-- Product 5 -->
             <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
                 <img src="kamera canon.jpg" alt="Kamera Canon">
                 <h3>Kamera Canon EOS M50</h3>
@@ -103,7 +171,6 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-        <!-- Product 6 -->
             <div class="produk-card" data-kategori="furnitur" data-harga="899000">
                 <img src="rak buku.jpg" alt="Rak Buku">
                 <h3>Rak Buku Kayu</h3>
@@ -112,8 +179,7 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-        <!-- Product 7 -->
-            <div class="produk-card" data-kategori="elektronik" data-harga=30000">
+            <div class="produk-card" data-kategori="elektronik" data-harga="30000">
                 <img src="Laptop.jpg" alt="elektronik">
                 <h3>Laptop</h3>
                 <p class="kondisi">Kondisi: 99%</p>
@@ -121,53 +187,47 @@
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
 
-         <!-- Product 8 -->
-            <div class="produk-card" data-kategori="fashion" data-harga=80000">
+            <div class="produk-card" data-kategori="fashion" data-harga="80000">
                 <img src="Sepatu.jpg" alt="fashion">
-                <h3></h3>
+                <h3>Sepatu Kulit</h3>
                 <p class="kondisi">Kondisi: 100%</p>
                 <p class="harga">Rp 80.000</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
-            <style>
-                /* Background slideshow */
-.background-slideshow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.background-slideshow .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.background-slideshow .slide.active {
-    opacity: 1;
-}
         </div>
     </section>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
     <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.background-slideshow .slide');
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.background-slideshow .slide');
 
-    function showNextSlide() {
-        slides[slideIndex].classList.remove('active');
-        slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].classList.add('active');
-    }
+        function showNextSlide() {
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
 
-    setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
-</script>
+        setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
+
+        // Fungsi filter berdasarkan pencarian dan harga
+        function applyFilters() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+            document.querySelectorAll('.produk-card').forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const price = parseInt(card.getAttribute('data-harga'));
+
+                const matchSearch = title.includes(searchInput);
+                const matchPrice = price >= minPrice && price <= maxPrice;
+
+                card.style.display = (matchSearch && matchPrice) ? '' : 'none';
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+    </script>
 </body>
 </html>
