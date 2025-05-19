@@ -6,42 +6,62 @@
     <title>LINGKAR - Ekonomi Sirkular Palu</title>
     <link rel="stylesheet" href="style.CSS"/>
     <style>
-        .search-bar {
-            margin: 20px auto;
-            text-align: center;
-        }
-        .search-bar input {
-            padding: 10px;
-            width: 60%;
-            font-size: 1rem;
-        }
-        .user-rating {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .user-rating .stars {
-            font-size: 1.5rem;
-            color: gold;
-        }
-        .review-box, .exchange-section, .chat-section {
-            margin: 30px auto;
-            width: 80%;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .review-box textarea, .exchange-section textarea {
+        /* Background slideshow */
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 80px;
-            padding: 10px;
-            font-size: 1rem;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
         }
-        .chat-box {
-            height: 150px;
-            overflow-y: auto;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ccc;
+
+        .background-slideshow .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .background-slideshow .slide.active {
+            opacity: 1;
+        }
+
+        .search-filter-container {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            color: white;
+        }
+
+        .search-filter-container input[type="text"],
+        .search-filter-container input[type="number"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        .price-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .price-filter button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -68,11 +88,6 @@
             <li><a href="login.html" class="btn-login">Login</a></li>
         </ul>
     </nav>
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Cari barang preloved...">
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -102,68 +117,117 @@
             <button class="filter-btn" data-kategori="lelang">Lelang</button>
         </div>
 
-        <div class="produk-grid">
-            <!-- Product cards tetap seperti sebelumnya -->
+        <!-- Search and Price Filter -->
+        <div class="search-filter-container">
+            <input type="text" id="searchInput" placeholder="Cari produk..." />
+            <div class="price-filter">
+                <label for="minPrice">Min Harga:</label>
+                <input type="number" id="minPrice" placeholder="0">
+                <label for="maxPrice">Max Harga:</label>
+                <input type="number" id="maxPrice" placeholder="1000000">
+                <button onclick="applyFilters()">Terapkan</button>
+            </div>
         </div>
-    </section>
 
-    <!-- Rating dan Review -->
-    <section class="user-rating">
-        <h3>Nilai Pengalaman Anda</h3>
-        <div class="stars">★★★★★</div>
-    </section>
+        <div class="produk-grid">
+            <!-- Product Cards -->
+            <div class="produk-card" data-kategori="fashion" data-harga="75000">
+                <img src="Kaos vintage.jpg" alt="Kaos Vintage">
+                <h3>Kaos Vintage 90s</h3>
+                <p class="kondisi">Kondisi: 80%</p>
+                <p class="harga">Rp 75.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-    <section class="review-box">
-        <h3>Tulis Ulasan</h3>
-        <textarea placeholder="Tulis ulasan Anda di sini..."></textarea>
-    </section>
+            <div class="produk-card" data-kategori="elektronik" data-harga="450000">
+                <img src="speaker JBL.jpg" alt="Speaker JBL">
+                <h3>Speaker JBL Flip 4</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 450.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-    <!-- Tukar Barang -->
-    <section class="exchange-section">
-        <h3>Ajukan Tukar Barang</h3>
-        <textarea placeholder="Deskripsikan barang Anda & barang yang diinginkan..."></textarea>
-    </section>
+            <div class="produk-card" data-kategori="furnitur" data-harga="350000">
+                <img src="Meja kerja.jpg" alt="Meja Kerja">
+                <h3>Meja Kerja Minimalis</h3>
+                <p class="kondisi">Kondisi: 85%</p>
+                <p class="harga">Rp 350.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
 
-    <!-- Live Chat -->
-    <section class="chat-section">
-        <h3>Live Chat</h3>
-        <div class="chat-box" id="chatBox"></div>
-        <input type="text" id="chatInput" placeholder="Ketik pesan...">
+            <div class="produk-card" data-kategori="fashion" data-harga="120000">
+                <img src="Jaket denim.jpg" alt="Jaket Denim">
+                <h3>Jaket Denim Vintage</h3>
+                <p class="kondisi">Kondisi: 75%</p>
+                <p class="harga">Rp 120.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card" data-kategori="elektronik" data-harga="5999000">
+                <img src="kamera canon.jpg" alt="Kamera Canon">
+                <h3>Kamera Canon EOS M50</h3>
+                <p class="kondisi">Kondisi: 95%</p>
+                <p class="harga">Rp 5.999.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card" data-kategori="furnitur" data-harga="899000">
+                <img src="rak buku.jpg" alt="Rak Buku">
+                <h3>Rak Buku Kayu</h3>
+                <p class="kondisi">Kondisi: 90%</p>
+                <p class="harga">Rp 899.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card" data-kategori="elektronik" data-harga="30000">
+                <img src="Laptop.jpg" alt="elektronik">
+                <h3>Laptop</h3>
+                <p class="kondisi">Kondisi: 99%</p>
+                <p class="harga">Rp 30.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card" data-kategori="fashion" data-harga="80000">
+                <img src="Sepatu.jpg" alt="fashion">
+                <h3>Sepatu Kulit</h3>
+                <p class="kondisi">Kondisi: 100%</p>
+                <p class="harga">Rp 80.000</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.background-slideshow .slide');
+
         function showNextSlide() {
             slides[slideIndex].classList.remove('active');
             slideIndex = (slideIndex + 1) % slides.length;
             slides[slideIndex].classList.add('active');
         }
-        setInterval(showNextSlide, 4000);
 
-        // Search functionality
-        document.getElementById("searchInput").addEventListener("input", function() {
-            const searchValue = this.value.toLowerCase();
-            const produkCards = document.querySelectorAll(".produk-card");
-            produkCards.forEach(card => {
-                const title = card.querySelector("h3").textContent.toLowerCase();
-                card.style.display = title.includes(searchValue) ? "block" : "none";
+        setInterval(showNextSlide, 4000); // ganti slide setiap 4 detik
+
+        // Fungsi filter berdasarkan pencarian dan harga
+        function applyFilters() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+            document.querySelectorAll('.produk-card').forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const price = parseInt(card.getAttribute('data-harga'));
+
+                const matchSearch = title.includes(searchInput);
+                const matchPrice = price >= minPrice && price <= maxPrice;
+
+                card.style.display = (matchSearch && matchPrice) ? '' : 'none';
             });
-        });
+        }
 
-        // Simple chat display (placeholder only)
-        const chatInput = document.getElementById("chatInput");
-        const chatBox = document.getElementById("chatBox");
-        chatInput.addEventListener("keypress", function(e) {
-            if (e.key === "Enter" && this.value.trim() !== "") {
-                const msg = document.createElement("p");
-                msg.textContent = "Anda: " + this.value;
-                chatBox.appendChild(msg);
-                chatBox.scrollTop = chatBox.scrollHeight;
-                this.value = "";
-            }
-        });
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
     </script>
 </body>
 </html>
