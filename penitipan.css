@@ -20,7 +20,6 @@ nav {
     z-index: 1000;
 }
 
-    /* Tambahkan hamburger menu */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -28,7 +27,6 @@ nav {
     font-size: 1.5rem;
 }
 
-/* Perbaikan responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -52,7 +50,7 @@ nav {
     }
 
     .logo img {
-        transform: scale(2); /* Sesuaikan ukuran logo di mobile */
+        transform: scale(2);
         margin-right: 10px;
     }
 
@@ -64,14 +62,14 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 30px; /* Jarak antara logo dan teks */
+    gap: 30px;
 }
 
 .logo img {
-    height: 40px; /* Tetap pertahankan tinggi original */
-    transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
-    transform-origin: left center; /* Anchor ke kiri */
-    margin-right: 20px; /* Tambah jarak dari menu */
+    height: 40px;
+    transform: scale(4);
+    transform-origin: left center;
+    margin-right: 20px;
 }
 
 .nav-links {
@@ -87,34 +85,43 @@ nav {
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #000000;
 }
 
 .btn-login {
     background: #ffffff;
-    color: #9C7A2C!important;
+    color: #9C7A2C !important;
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
 
-
-/* ===== PENITIPAN SECTION ===== */
-.penitipan-container {
+/* ===== DONASI SECTION ===== */
+.donasi-container {
     padding: 100px 5% 50px;
     margin-top: 80px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f4ec 100%);
 }
 
-.penitipan-header {
+.donasi-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.penitipan-header h1 {
+.donasi-header h1 {
     font-size: 2.5rem;
     color: #9C7A2C;
     margin-bottom: 1rem;
+}
+
+.keunggulan-section h2,
+.prosedur-section h2,
+.form-section h2,
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #9C7A2C;
 }
 
 .keunggulan-grid,
@@ -159,7 +166,8 @@ nav {
     margin: 0 auto 1rem;
 }
 
-.penitipan-form {
+/* Form Donasi */
+.donasi-form {
     max-width: 600px;
     margin: 2rem auto;
     background: white;
@@ -179,11 +187,13 @@ nav {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    resize: vertical;
 }
 
 .btn-submit {
@@ -199,7 +209,7 @@ nav {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .penitipan-header h1 {
+    .donasi-header h1 {
         font-size: 2rem;
     }
 }
