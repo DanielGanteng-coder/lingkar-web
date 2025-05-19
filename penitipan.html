@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan Penitipan - LINGKAR</title>
-    <link rel="stylesheet" href="penitipan.css">
+    <title>Layanan Donasi - LINGKAR</title>
+    <link rel="stylesheet" href="donasi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -18,67 +18,67 @@
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="products.html">Produk</a></li>
-            <li><a href="penitipan.html" class="active">Penitipan</a></li>
+            <li><a href="donasi.html" class="active">Donasi</a></li>
             <li><a href="tentang kami.html">Tentang Kami</a></li>
             <li><a href="login.html" class="btn-login">Login</a></li>
         </ul>
     </nav>
 
-    <!-- Penitipan Section -->
-    <section class="penitipan-container">
-        <div class="penitipan-header">
-            <h1>Layanan Penitipan Barang</h1>
-            <p>Solusi Aman dan Tepat untuk Penyimpanan Barang Anda</p>
+    <!-- Donasi Section -->
+    <section class="donasi-container">
+        <div class="donasi-header">
+            <h1>Layanan Donasi Barang</h1>
+            <p>Berbagi Barang Preloved untuk Dampak yang Lebih Besar</p>
         </div>
 
         <!-- Keunggulan -->
         <div class="keunggulan-section">
-            <h2>Mengapa Memilih LINGKAR?</h2>
+            <h2>Mengapa Donasi di LINGKAR?</h2>
             <div class="keunggulan-grid">
                 <div class="keunggulan-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Keamanan 24/7</h3>
-                    <p>BANYAK CCTV</p>
+                    <i class="fas fa-heart"></i>
+                    <h3>Dampak Sosial Nyata</h3>
+                    <p>Barang Anda akan disalurkan kepada yang membutuhkan</p>
                 </div>
                 <div class="keunggulan-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Fleksibel</h3>
-                    <p>Durasi penitipan mulai dari 1 hari - 1 tahun</p>
+                    <i class="fas fa-receipt"></i>
+                    <h3>Transparansi & Tracking</h3>
+                    <p>Lacak ke mana barang Anda disalurkan dan siapa penerimanya</p>
                 </div>
                 <div class="keunggulan-card">
-                    <i class="fas fa-tag"></i>
-                    <h3>Harga Terjangkau</h3>
-                    <p>Mulai dari Rp 50.000/bulan</p>
+                    <i class="fas fa-gift"></i>
+                    <h3>Reward Donatur</h3>
+                    <p>Dapatkan badge dan voucher menarik sebagai apresiasi</p>
                 </div>
             </div>
         </div>
 
-        <!-- Prosedur -->
+        <!-- Prosedur Donasi -->
         <div class="prosedur-section">
-            <h2>Cara Menitipkan Barang</h2>
+            <h2>Cara Berdonasi</h2>
             <div class="prosedur-steps">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Registrasi Online</h3>
-                    <p>Isi formulir pendaftaran dan pilih paket</p>
+                    <h3>Isi Formulir Donasi</h3>
+                    <p>Lengkapi data diri dan barang yang ingin disumbangkan</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>Verifikasi Barang</h3>
-                    <p>Bawa barang ke gudang kami untuk inspeksi</p>
+                    <p>Tim kami akan melakukan validasi kelayakan barang</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Penitipan Aman</h3>
-                    <p>Terima bukti penitipan dan track status online</p>
+                    <h3>Donasi Dikirim</h3>
+                    <p>Barang Anda kami salurkan ke komunitas atau individu yang tepat</p>
                 </div>
             </div>
         </div>
 
-        <!-- Form Penitipan -->
+        <!-- Form Donasi -->
         <div class="form-section">
-            <h2>Mulai Penitipan</h2>
-            <form class="penitipan-form">
+            <h2>Formulir Donasi</h2>
+            <form class="donasi-form">
                 <div class="form-group">
                     <label>Nama Lengkap</label>
                     <input type="text" required>
@@ -88,18 +88,14 @@
                     <input type="email" required>
                 </div>
                 <div class="form-group">
-                    <label>Durasi Penitipan</label>
-                    <select required>
-                        <option value="">Pilih Durasi</option>
-                        <option>1 hari</option>
-                        <option>3 hari</option>
-                        <option>1 Minggu</option>
-                        <option>1 Bulan</option>
-                        <option>3 Bulan</option>
-                        <option>6 Bulan</option>
-                    </select>
+                    <label>Jenis Barang</label>
+                    <input type="text" placeholder="Contoh: Baju, Buku, Elektronik" required>
                 </div>
-                <button type="submit" class="btn-submit">Ajukan Penitipan</button>
+                <div class="form-group">
+                    <label>Deskripsi Singkat</label>
+                    <textarea placeholder="Tuliskan kondisi barang atau cerita menarik di baliknya"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Donasi</button>
             </form>
         </div>
 
@@ -108,17 +104,21 @@
             <h2>Pertanyaan Umum</h2>
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h3>📦 Barang apa saja yang boleh dititipkan?</h3>
-                    <p>Kami menerima semua barang dalam kondisi baik. Kecuali bahan berbahaya, organik, dan hewan</p>
+                    <h3>🎁 Barang apa yang bisa didonasikan?</h3>
+                    <p>Kami menerima barang layak pakai seperti pakaian, alat tulis, buku, mainan, dan elektronik kecil</p>
                 </div>
                 <div class="faq-card">
-                    <h3>⏱ Bagaimana sistem pengambilan barang?</h3>
-                    <p>Bisa diambil kapan saja selama jam operasional dengan menunjukkan ID dan bukti penitipan</p>
+                    <h3>🛍 Apakah donasi bisa dijemput?</h3>
+                    <p>Ya, kami menyediakan layanan penjemputan gratis untuk donasi dalam jumlah tertentu</p>
+                </div>
+                <div class="faq-card">
+                    <h3>🏆 Apa itu sistem reward donatur?</h3>
+                    <p>Donatur aktif akan mendapatkan badge digital, sertifikat, dan voucher diskon produk LINGKAR</p>
                 </div>
             </div>
         </div>
     </section>
 
-   <script src="script/script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
