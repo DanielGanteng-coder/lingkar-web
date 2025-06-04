@@ -1,30 +1,30 @@
-        /* ===== GLOBAL STYLES ===== */
-        *, html {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* ===== GLOBAL STYLES ===== */
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body {
-            background: #f9f9f9;
-        }
+body {
+    background: #f9f9f9;
+}
 
-        /* ===== NAVBAR ===== */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: #9C7A2C;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #9C7A2C;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        /* Tambahkan hamburger menu */
+/* Hamburger menu */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -32,7 +32,7 @@
     font-size: 1.5rem;
 }
 
-/* Perbaikan responsive */
+/* Responsive Navbar */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -65,243 +65,133 @@
     }
 }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 30px; /* Jarak antara logo dan teks */
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Jarak antara logo dan teks */
+}
 
-        .logo img {
-            height: 40px; /* Tetap pertahankan tinggi original */
-            transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
-            transform-origin: left center; /* Anchor ke kiri */
-            margin-right: 20px; /* Tambah jarak dari menu */
-        }
+.logo img {
+    height: 40px; /* Tetap pertahankan tinggi original */
+    transform: scale(4); /* Perbesar 4x dari ukuran asli */
+    transform-origin: left center; /* Anchor ke kiri */
+    margin-right: 20px; /* Tambah jarak dari menu */
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-        .nav-links a.active {
-            color: #ffffff;
-        }
+.nav-links a.active {
+    color: #ffffff;
+}
 
-        .nav-links a:hover {
-         color: #000000;
-        }
+.nav-links a:hover {
+    color: #000000;
+}
 
+.btn-login {
+    background: #ffffff;
+    color: #9C7A2C !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
 
-        .btn-login {
-            background: #ffffff;
-            color: #9C7A2C!important;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
+/* ===== PRODUCTS PAGE ===== */
+.hero-products {
+    padding: 8rem 5% 2rem;
+    background: linear-gradient(135deg, #f9f9f9 0%, #eadab6 100%);
+}
 
-        /* ===== PRODUCTS PAGE ===== */
-        .hero-products {
-            padding: 8rem 5% 2rem;
-            background: linear-gradient(135deg, #f9f9f9 0%, #eadab6 100%);
-        }
+.hero-products h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
+}
 
-        .hero-products h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+/* ===== SEARCH & FILTER ===== */
+.controls-container {
+    padding: 2rem 5%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
-        /* ===== SEARCH & FILTER ===== */
-        .controls-container {
-            padding: 2rem 5%;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+#search-bar {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #9C7A2C;
+    border-radius: 30px;
+    font-size: 1rem;
+}
 
-        #search-bar {
-            flex: 1;
-            max-width: 400px;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #9C7A2C;
-            border-radius: 30px;
-            font-size: 1rem;
-        }
+#sort-harga {
+    padding: 0.8rem 1rem;
+    border: 2px solid #9C7A2C;
+    border-radius: 30px;
+    background: white;
+    cursor: pointer;
+}
 
-        #sort-harga {
-            padding: 0.8rem 1rem;
-            border: 2px solid #9C7A2C;
-            border-radius: 30px;
-            background: white;
-            cursor: pointer;
-        }
+.filter-kategori {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-        .filter-kategori {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+.filter-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.filter-btn.active {
+    background: #9C7A2C;
+    color: white;
+    border-color: #9C7A2C;
+}
 
-        .filter-btn.active {
-            background: #9C7A2C;
-            color: white;
-            border-color: #9C7A2C;
-        }
-
-        /* ===== PRODUCT GRID ===== */
-      .produk-grid {
+/* ===== PRODUCT GRID ===== */
+.produk-grid {
     padding: 0 5% 4rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     grid-auto-flow: dense;
     align-items: start;
+    transition: grid-template-rows 0.3s ease;
 }
 
-       .produk-card {
+.produk-card {
     background: white;
     border-radius: 15px;
     padding: 1.5rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s linear;
     opacity: 1;
     transform: translateY(0);
     animation: slideIn 0.5s ease-out;
     width: 100%;
 }
 
-        .produk-card.hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-        }
-
-        .produk-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .produk-card h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .produk-card .kondisi {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-
-        .produk-card .harga {
-            color: #000000;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-        }
-
-        .btn-beli {
-            background: #9C7A2C;
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-beli:hover {
-            transform: scale(0.98);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .controls-container {
-                flex-direction: column;
-            }
-            
-            #search-bar {
-                width: 100%;
-                max-width: none;
-            }
-        }
-
-       /* Animasi Pencarian */
-    .produk-grid {
-        grid-auto-flow: dense;
-      transition: grid-template-rows 0.3s ease;
-}
-
-    .produk-card {
-        transition: 
-            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.2s linear;
-    }
-
-
-    /* Efek Ketik Search */
-    #search-bar:focus {
-        box-shadow: 0 4px 6px -1px rgba(39, 174, 96, 0.2);
-    }
-
-    /* Highlight Hasil Pencarian */
-    .highlight {
-        background: #e8f5e9;
-        padding: 0.1em 0.3em;
-        border-radius: 3px;
-    }
-
-    .produk-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-        position: relative;
-    }
-
-    .produk-card {
-        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        opacity: 1;
-        transform: scale(1);
-    }
-
-   .produk-card.hidden {
+.produk-card.hidden {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
@@ -312,7 +202,77 @@
     position: absolute;
 }
 
-    @keyframes reposition {
-        from { transform: translateY(50px); }
-        to { transform: translateY(0); }
+.produk-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.produk-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.produk-card .kondisi {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.produk-card .harga {
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.btn-beli {
+    background: #9C7A2C;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-beli:hover {
+    transform: scale(0.98);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .controls-container {
+        flex-direction: column;
+    }
+    
+    #search-bar {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Highlight Hasil Pencarian */
+.highlight {
+    background: #e8f5e9;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
