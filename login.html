@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login - LINGKAR</title>
-    <link rel="stylesheet" href="login.CSS">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="Logo LINGKAR.png" alt="LINGKAR">
-            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+            <img src="Logo LINGKAR.png" alt="LINGKAR" />
+            <span>LINGKAR</span>
         </div>
         <div class="menu-toggle">☰</div>
         <ul class="nav-links">
@@ -25,31 +25,35 @@
     </nav>
 
     <!-- Login Section -->
-    <section class="login-container">
-        <div class="login-box">
-            <h1>Masuk ke Akun Anda</h1>
+    <section class="login-container" style="padding: 8rem 5% 2rem;">
+        <div class="login-box" style="max-width: 400px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h1 style="text-align: center; margin-bottom: 1.5rem; color: #2c3e50;">Masuk ke Akun Anda</h1>
             <form class="login-form">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="contoh@email.com" required>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: #2c3e50;">Email</label>
+                    <input id="email" type="email" placeholder="contoh@email.com" required
+                        style="width: 100%; padding: 0.8rem 1rem; border: 2px solid #9C7A2C; border-radius: 30px; font-size: 1rem;" />
                 </div>
                 
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="password" style="display: block; margin-bottom: 0.5rem; color: #2c3e50;">Password</label>
+                    <input id="password" type="password" placeholder="••••••••" required
+                        style="width: 100%; padding: 0.8rem 1rem; border: 2px solid #9C7A2C; border-radius: 30px; font-size: 1rem;" />
                 </div>
 
-                <div class="form-options">
-                    <label class="remember-me">
-                        <input type="checkbox"> Ingat Saya
+                <div class="form-options" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <label class="remember-me" style="color: #2c3e50; font-size: 0.9rem;">
+                        <input type="checkbox" /> Ingat Saya
                     </label>
-                    <a href="#lupa-password" class="forgot-password">Lupa Password?</a>
+                    <a href="#lupa-password" class="forgot-password" style="color: #9C7A2C; font-weight: 600; text-decoration: none;">Lupa Password?</a>
                 </div>
 
-                <button type="submit" class="btn-login-submit">Masuk</button>
+                <button type="submit" class="btn-login-submit" style="background: #9C7A2C; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; width: 100%; cursor: pointer; font-size: 1rem; font-weight: 600; transition: 0.3s;">
+                    Masuk
+                </button>
 
-                <div class="register-link">
-                    Belum punya akun? <a href="daftar.html">Daftar Sekarang</a>
+                <div class="register-link" style="text-align: center; margin-top: 1rem; color: #2c3e50;">
+                    Belum punya akun? <a href="daftar.html" style="color: #9C7A2C; font-weight: 600; text-decoration: none;">Daftar Sekarang</a>
                 </div>
             </form>
         </div>
