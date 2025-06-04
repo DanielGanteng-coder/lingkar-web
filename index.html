@@ -3,243 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINGKAR - Ekonomi Sirkular Palu</title>
-    <link rel="stylesheet" href="style.CSS"/>
+    <title>LINGKAR - Donasi Makanan Palu</title>
+    <link rel="stylesheet" href="style.css"/>
     <style>
-        /* Background slideshow */
-        .background-slideshow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .background-slideshow .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .background-slideshow .slide.active {
-            opacity: 1;
-        }
-
-        .search-filter-container {
-            margin: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
-            color: white;
-        }
-
-        .search-filter-container input[type="text"],
-        .search-filter-container input[type="number"] {
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-            width: 200px;
-        }
-
-        .price-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .price-filter button {
-            padding: 8px 12px;
-            border: none;
-            background-color: #28a745;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .produk-card .kualitas, .produk-card .rating {
-            color: #fff;
-            margin: 5px 0;
-        }
+        /* CSS singkat untuk latar belakang dan pencarian */
+        .background-slideshow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .background-slideshow .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
+        .background-slideshow .slide.active { opacity: 1; }
+        .search-filter-container { margin: 20px; color: white; }
+        .produk-card .kualitas, .produk-card .rating { color: #fff; margin: 5px 0; }
     </style>
 </head>
 <body>
     <div class="background-slideshow">
-        <div class="slide active" style="background-image: url('rak buku.jpg');"></div>
-        <div class="slide" style="background-image: url('Jaket denim.jpg');"></div>
-        <div class="slide" style="background-image: url('Laptop.jpg');"></div>
-        <div class="slide" style="background-image: url('Alat dapur.jpg');"></div>
+        <div class="slide active" style="background-image: url('makanan1.jpg');"></div>
+        <div class="slide" style="background-image: url('makanan2.jpg');"></div>
+        <div class="slide" style="background-image: url('makanan3.jpg');"></div>
     </div>
 
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="Logo LINGKAR.png" alt="LINGKAR">
-            <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; font-size: 1.2rem; margin-left: 8px;">LINGKAR</span>
+            <img src="logo_lingkar.png" alt="LINGKAR">
+            <span>LINGKAR</span>
         </div>
-        <div class="menu-toggle">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Beranda</a></li>
-            <li><a href="products.html">Produk</a></li>
-            <li><a href="penitipan.html">Donasi</a></li>
-            <li><a href="tentang kami.html">Tentang Kami</a></li>
-            <li><a href="login.html" class="btn-login">Login</a></li>
+            <li><a href="#donasi">Donasi Makanan</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#login">Login</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Selamatkan Bumi, Berdayakan Barang Bekas!</h1>
-            <p>Jual atau donasikan barang preloved anda dengan aman dan ramah lingkungan</p>
+            <h1>Berbagi Makanan, Menyelamatkan Kehidupan</h1>
+            <p>Donasikan makanan berlebih dari rumah, restoran, atau acara — dan bantu yang membutuhkan</p>
             <div class="cta-buttons">
-                <button class="btn-jual">Jual Barang</button>
-                <button class="btn-titip">Beli Barang</button>
-                <button class="btn-makanan">Donasikan Barang</button>
-                <button class="btn-titip">Lelang Barang</button>
+                <button class="btn-donasi">Donasikan Makanan</button>
+                <button class="btn-akses">Akses Makanan</button>
+                <button class="btn-lacak">Lacak Distribusi</button>
+                <button class="btn-peta">Peta Titik Kelaparan</button>
             </div>
         </div>
         <div class="hero-image">
-            <img src="Logo LINGKAR.png" alt="Ilustrasi LINGKAR">
+            <img src="logo_lingkar.png" alt="LINGKAR">
         </div>
     </section>
 
     <!-- Smart Search Filter -->
-    <section class="search-section" style="padding: 1rem; background-color: #f9f9f9;">
-        <input
-            type="text"
-            id="smartSearchInput"
-            placeholder="Cari barang... (misal: jaket, elektronik, furnitur)"
-            style="width: 60%; padding: 0.5rem; font-size: 1rem;"
-        />
-        <select id="qualityFilter" style="padding: 0.5rem; margin-left: 1rem;">
-            <option value="all">Semua Kualitas</option>
-            <option value="A">Kualitas A (Bagus)</option>
-            <option value="B">Kualitas B (Standar)</option>
-            <option value="C">Kualitas C (Perlu Perbaikan)</option>
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Cari jenis makanan...">
+        <select id="kategoriFilter">
+            <option value="all">Semua Kategori</option>
+            <option value="segar">Makanan Segar</option>
+            <option value="olahan">Olahan</option>
+            <option value="kering">Makanan Kering</option>
+            <option value="instan">Instan</option>
         </select>
-        <button onclick="filterSmartProducts()" style="padding: 0.5rem 1rem; margin-left: 1rem;">Cari</button>
+        <button onclick="applyFilters()">Cari</button>
     </section>
 
-    <!-- Produk Section -->
+    <!-- List Makanan Donasi -->
     <section class="produk-list">
-        <div class="filter-kategori">
-            <button class="filter-btn active" data-kategori="all">Semua</button>
-            <button class="filter-btn" data-kategori="fashion">Fashion</button>
-            <button class="filter-btn" data-kategori="elektronik">Elektronik</button>
-            <button class="filter-btn" data-kategori="furnitur">Furnitur</button>
-            <button class="filter-btn" data-kategori="donasikan">Donasikan</button>
-            <button class="filter-btn" data-kategori="lelang">Lelang</button>
+        <div class="produk-card" data-kategori="olahan" data-harga="0">
+            <img src="nasi_kotak.jpg" alt="Nasi Kotak">
+            <h3>Nasi Kotak Acara</h3>
+            <p>Kategori: Olahan</p>
+            <p>Jumlah: 50 box</p>
+            <p class="kualitas">Layak konsumsi: 4 jam ke depan</p>
+            <p class="rating">⭐⭐⭐⭐⭐</p>
+            <button>Ambil</button>
         </div>
 
-        <!-- Search and Price Filter -->
-        <div class="search-filter-container">
-            <input type="text" id="searchInput" placeholder="Cari produk..." />
-            <div class="price-filter">
-                <label for="minPrice">Min Harga:</label>
-                <input type="number" id="minPrice" placeholder="0">
-                <label for="maxPrice">Max Harga:</label>
-                <input type="number" id="maxPrice" placeholder="1000000">
-                <button onclick="applyFilters()">Terapkan</button>
-            </div>
-        </div>
-
-        <div class="produk-grid">
-            <!-- Product Cards -->
-            <div class="produk-card" data-kategori="fashion" data-harga="75000">
-                <img src="Kaos vintage.jpg" alt="Kaos Vintage">
-                <h3>Kaos Vintage 90s</h3>
-                <p class="kondisi">Kondisi: 80%</p>
-                <p class="harga">Rp 75.000</p>
-                <p class="kualitas">Kualitas: B</p>
-                <p class="rating">⭐⭐⭐☆☆</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <div class="produk-card" data-kategori="elektronik" data-harga="450000">
-                <img src="speaker JBL.jpg" alt="Speaker JBL">
-                <h3>Speaker JBL Flip 4</h3>
-                <p class="kondisi">Kondisi: 90%</p>
-                <p class="harga">Rp 450.000</p>
-                <p class="kualitas">Kualitas: A</p>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <div class="produk-card" data-kategori="furnitur" data-harga="350000">
-                <img src="Meja kerja.jpg" alt="Meja Kerja">
-                <h3>Meja Kerja Minimalis</h3>
-                <p class="kondisi">Kondisi: 85%</p>
-                <p class="harga">Rp 350.000</p>
-                <p class="kualitas">Kualitas: A</p>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <div class="produk-card" data-kategori="fashion" data-harga="120000">
-                <img src="Jaket denim.jpg" alt="Jaket Denim">
-                <h3>Jaket Denim Vintage</h3>
-                <p class="kondisi">Kondisi: 75%</p>
-                <p class="harga">Rp 120.000</p>
-                <p class="kualitas">Kualitas: C</p>
-                <p class="rating">⭐⭐☆☆☆</p>
-                <button class="btn-beli">Beli Sekarang</button>
-            </div>
-
-            <!-- Produk lainnya tidak ditampilkan demi singkat -->
+        <div class="produk-card" data-kategori="segar" data-harga="0">
+            <img src="buah_buahan.jpg" alt="Buah-buahan">
+            <h3>Buah Segar</h3>
+            <p>Kategori: Segar</p>
+            <p>Jumlah: 10 kg</p>
+            <p class="kualitas">Layak konsumsi: 1 hari</p>
+            <p class="rating">⭐⭐⭐⭐</p>
+            <button>Ambil</button>
         </div>
     </section>
 
-    <script src="script.js"></script>
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.background-slideshow .slide');
-
         function showNextSlide() {
             slides[slideIndex].classList.remove('active');
             slideIndex = (slideIndex + 1) % slides.length;
             slides[slideIndex].classList.add('active');
         }
-
         setInterval(showNextSlide, 4000);
 
         function applyFilters() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
-
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const kategori = document.getElementById('kategoriFilter').value;
             document.querySelectorAll('.produk-card').forEach(card => {
                 const title = card.querySelector('h3').innerText.toLowerCase();
-                const price = parseInt(card.getAttribute('data-harga'));
-
-                const matchSearch = title.includes(searchInput);
-                const matchPrice = price >= minPrice && price <= maxPrice;
-
-                card.style.display = (matchSearch && matchPrice) ? '' : 'none';
-            });
-        }
-
-        document.getElementById('searchInput').addEventListener('input', applyFilters);
-
-        function filterSmartProducts() {
-            const keyword = document.getElementById('smartSearchInput').value.toLowerCase();
-            const selectedQuality = document.getElementById('qualityFilter').value;
-
-            document.querySelectorAll('.produk-card').forEach(card => {
-                const title = card.querySelector('h3').innerText.toLowerCase();
-                const quality = card.querySelector('.kualitas')?.innerText.split(':')[1]?.trim() || '';
-
-                const matchKeyword = title.includes(keyword);
-                const matchQuality = (selectedQuality === 'all' || quality === selectedQuality);
-
-                card.style.display = (matchKeyword && matchQuality) ? '' : 'none';
+                const cardKategori = card.getAttribute('data-kategori');
+                const matchTitle = title.includes(keyword);
+                const matchKategori = (kategori === 'all' || kategori === cardKategori);
+                card.style.display = (matchTitle && matchKategori) ? '' : 'none';
             });
         }
     </script>
