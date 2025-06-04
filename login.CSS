@@ -1,5 +1,6 @@
 /* ===== RESET CSS ===== */
-*, html {
+*,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,7 +21,7 @@ nav {
     z-index: 1000;
 }
 
-/* Tambahkan hamburger menu */
+/* Hamburger menu toggle */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -28,7 +29,7 @@ nav {
     font-size: 1.5rem;
 }
 
-/* Perbaikan responsive */
+/* Responsive Navbar */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -38,9 +39,10 @@ nav {
         left: 0;
         right: 0;
         background: #9C7A2C;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 10px 10px;
     }
 
     .nav-links.active {
@@ -52,7 +54,7 @@ nav {
     }
 
     .logo img {
-        transform: scale(2); /* Sesuaikan ukuran logo di mobile */
+        transform: scale(2); /* Ukuran logo mobile */
         margin-right: 10px;
     }
 
@@ -68,10 +70,11 @@ nav {
 }
 
 .logo img {
-    height: 40px; /* Tetap pertahankan tinggi original */
-    transform: scale(4); /* Perbesar 1.5x dari ukuran asli */
-    transform-origin: left center; /* Anchor ke kiri */
-    margin-right: 20px; /* Tambah jarak dari menu */
+    height: 40px;
+    transform: scale(4);
+    transform-origin: left center;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
 }
 
 .nav-links {
@@ -84,7 +87,7 @@ nav {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -93,11 +96,11 @@ nav {
 
 .btn-login {
     background: #ffffff;
-    color: #9C7A2C!important;
+    color: #9C7A2C !important;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    font-weight: 600;
 }
-
 
 /* ===== LOGIN SECTION ===== */
 .login-container {
@@ -114,9 +117,14 @@ nav {
     background: white;
     padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 450px;
+    transition: box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .login-box h1 {
@@ -143,6 +151,12 @@ nav {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #9C7A2C;
+    outline: none;
 }
 
 .form-options {
@@ -165,6 +179,10 @@ nav {
     font-size: 0.9rem;
 }
 
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
 .btn-login-submit {
     background: #9C7A2C;
     color: white;
@@ -174,7 +192,7 @@ nav {
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
     margin-top: 1rem;
 }
 
@@ -194,12 +212,16 @@ nav {
     text-decoration: none;
 }
 
-/* Responsive */
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive untuk mobile kecil */
 @media (max-width: 480px) {
     .login-box {
         padding: 1.5rem;
     }
-    
+
     .form-options {
         flex-direction: column;
         align-items: flex-start;
